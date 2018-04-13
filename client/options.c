@@ -56,7 +56,7 @@ static void	usage(char *name)
 {
   fprintf(stderr,
     "dns2tcp v%s ( http://www.hsc.fr/ )\n"
-    "Usage : %s [options] [server port] \n"
+    "Usage : %s [options] [server] [port] \n"
     "\t-c         \t: enable compression\n"
     "\t-z <domain>\t: domain to use (mandatory)\n"
     "\t-d <1|2|3>\t: debug_level (1, 2 or 3)\n"
