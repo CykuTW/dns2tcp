@@ -124,9 +124,9 @@
 		     )
 
 /* FIXME hardcoded '=' is bad ! (check base64_padding ...) */
-#define RESOURCE	"=resource."
-#define AUTH		"=auth."
-#define CONNECT		"=connect."
+#define RESOURCE	"-resource."
+#define AUTH		"-auth."
+#define CONNECT		"-connect."
 
 
 

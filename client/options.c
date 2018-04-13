@@ -56,7 +56,7 @@ static void	usage(char *name)
 {
   fprintf(stderr,
     "dns2tcp v%s ( http://www.hsc.fr/ )\n"
-    "Usage : %s [options] [server] \n"
+    "Usage : %s [options] [server port] \n"
     "\t-c         \t: enable compression\n"
     "\t-z <domain>\t: domain to use (mandatory)\n"
     "\t-d <1|2|3>\t: debug_level (1, 2 or 3)\n"
@@ -310,8 +310,15 @@ int			get_option(int argc, char **argv, t_conf *conf)
 	return (-1);
       }
     }
+
   if (optind < argc)
-      conf->dns_server = argv[optind];
+      conf->dns_server = argv[optind++];
+
+  if (optind < argc)
+      conf->dns_port = (unsigned short) atoi(argv[optind]);
+  else
+      conf->dns_port = 53;
+
   if ((*config_file) || (!conf->domain))
     /* we don't care if it read_config fails, config file may not
        exist */

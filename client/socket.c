@@ -221,7 +221,7 @@ socket_t		create_socket(t_conf *conf)
       MYERROR("Gethostbyname \'%s\'",conf->dns_server);
       return (-1);
     }
-  conf->sa.sin_port = htons(53);
+  conf->sa.sin_port = htons(conf->dns_port);
   memcpy(&conf->sa.sin_addr.s_addr, hostent->h_addr, sizeof(conf->sa.sin_addr.s_addr));
   conf->sa.sin_family = AF_INET;
   if ( ((sd = socket(PF_INET, SOCK_DGRAM, 0)) < 0)

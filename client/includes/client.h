@@ -44,6 +44,8 @@ typedef struct		s_conf {
   struct s_simple_list	*client;
   struct sockaddr_in	sa;
   char			*dns_server;
+  unsigned short dns_port;
+
   char			*cmdline;
   char			*output_file;
 #ifdef _WIN32
